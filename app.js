@@ -37,5 +37,3 @@ cron.schedule('5,20,35,50 * * * *', () => {
         console.log(err);
     });
 });
-
-sendMail();
