@@ -21,7 +21,7 @@ const checkAvailability = (url) => {
     })
 };
 
-cron.schedule('5,20,35,50 * * * *', () => {
+const task = cron.schedule('5,20,35,50 * * * *', () => {
     const currentDate = new Date(Date.now());
     const timeString = currentDate.toLocaleTimeString('en-US');
 
@@ -30,6 +30,7 @@ cron.schedule('5,20,35,50 * * * *', () => {
 
         if (result) {
             sendMail();
+            task.destroy();
         }
 
     }).catch(err => {
