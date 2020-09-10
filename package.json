@@ -1,5 +1,5 @@
 {
-  "name": "crawler",
+  "name": "product-availability",
   "version": "1.0.0",
   "description": "This software will check the availability of a product on a website.",
   "main": "app.js",

@@ -11,9 +11,9 @@ const checkAvailability = (url) => {
     return agent.get({ uri: url }).then(page => {
         const pageBody = parse(page.body);
         const availabilityRawText = pageBody.querySelector('.product-hero-description-price').rawText
-        const available = availabilityRawText.includes('In Stock');
+        const available = availabilityRawText.includes('Out of Stock');
 
-        return available;
+        return !available;
 
     }).catch(err => {
         console.error(err);
